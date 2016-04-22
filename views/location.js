@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-
-<body>
-
-</body>
-<script>
-    var params = {};
+var params = {};
 
 if (location.search) {
     var parts = location.search.substring(1).split('&');
@@ -35,36 +23,18 @@ function success(pos) {
     var urlEncodedData = JSON.stringify(postDATA);
     var XHR = new XMLHttpRequest();
 
-<<<<<<< 67fc2737946bde1e2518faa649669b331b2360e7
     XHR.open('POST', '/location');
-=======
-        XHR.open('POST', '/location');
->>>>>>> fixed url params
 
     // We add the required HTTP header to handle a form data POST request
     XHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     XHR.setRequestHeader('Content-Length', urlEncodedData.length);
 
-<<<<<<< 67fc2737946bde1e2518faa649669b331b2360e7
     XHR.send(urlEncodedData);
     document.write('<h1>Please access link in opera or chrome browser</h1> ');
-=======
-        // And finally, We send our data.
-        XHR.send(urlEncodedData);
-                document.write('Please access link in opera or chrome browser ');
-
->>>>>>> fixed url params
 
 
 };
-    if(navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(success, error, options)
-    }else{
-        document.write('Please access link in opera or chrome browser ');
-    }
-    
 
-<<<<<<< 67fc2737946bde1e2518faa649669b331b2360e7
 function error(err) {
     console.warn('ERROR(' + err.code + '): ' + err.message);
 };
@@ -73,9 +43,3 @@ if (navigator.geolocation) {
 } else {
     document.write('<h1>Please access link in opera or chrome browser</h1> ');
 }
-=======
->>>>>>> fixed url params
-
-</script>
-
-</html>

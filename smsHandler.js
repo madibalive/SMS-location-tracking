@@ -1,5 +1,4 @@
 
-
 function handler() {
     var twilio = require('twilio');
     var config = require('./config');
@@ -36,8 +35,10 @@ function handler() {
         }
         return false;
     }
+    
     function sendLink(from) {
-        var message = ' ' + link;
+        var link = '/?phone=' + from;
+        var message = ' Please nagivate to the link provided in Chrome or Opera browser' + link;
         post(message, from);
 
     }

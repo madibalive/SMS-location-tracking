@@ -4,14 +4,15 @@ function handler() {
     function getLocation(req, res) {
         var payload = req.body;
         var message;
-        if (!payload || !payload.geoPoint) {
+        var location = JSON.parse(payload);
 
-            var location = JSON.parse(payload.body);
+        if (!payload || !payload.geoPoint || !payload.phone) {
+            var location = payload.geopoint;
             message = "Your current position is " + location;
-            twilioAccess.post(message, from);
+            twilioAccess.post(message, payload.phone);
         } else {
             message = "Sorry could get Location, try opening the url from the chrome browser or opera "
-            twilioAccess.post(message, from);
+            twilioAccess.post(message, payload.phone);
         }
     }
     function renderIndex(req, res) {
@@ -21,7 +22,5 @@ function handler() {
         renderIndex: renderIndex,
         getLocation: getLocation
     }
-
-
 }
 module.exports = handler;
