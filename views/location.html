@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+ function success(pos) {
+        var crd = pos.coords;
+        var urlEncodedData = JSON.stringify(cred)
+        var XHR = new XMLHttpRequest();
+
+        XHR.open('POST', '/');
+
+        // We add the required HTTP header to handle a form data POST request
+        XHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        XHR.setRequestHeader('Content-Length', urlEncodedData.length);
+
+        // And finally, We send our data.
+        XHR.send(urlEncodedData);
+
+    };
+
+function error(err) {
+  console.warn('ERROR(' + err.code + '): ' + err.message);
+};
+
+navigator.geolocation.getCurrentPosition(success, error, options)
+
+</script>
+
+</html>

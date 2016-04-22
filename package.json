@@ -1,0 +1,31 @@
+{
+  "name": "sms_location_tracker",
+  "version": "1.0.0",
+  "description": "Get current location , via SMS Service ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madibalive/SMS-location-tracking.git"
+  },
+  "keywords": [
+    "sms",
+    "location",
+    "tracking",
+    "gps"
+  ],
+  "author": "Razak Wasiu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/madibalive/SMS-location-tracking/issues"
+  },
+  "homepage": "https://github.com/madibalive/SMS-location-tracking#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "lodash": "^4.11.1",
+    "twilio": "^2.9.1"
+  }
+}
